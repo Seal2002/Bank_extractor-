@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "ANUPAM KUMAR SINGH",
+  "account_number": "881012748358",
+  "bank_name": "digibank by DBS",
+  "branch": null,
+  "statement_period_from": "2022-02-01",
+  "statement_period_to": "2022-02-28",
+  "opening_balance": 3.3,
+  "closing_balance": 0.24,
+  "currency": "INR"
+}

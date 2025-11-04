@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "KISHAN LAL GADARI",
+  "account_number": "142310110006633",
+  "bank_name": "Bank of India",
+  "branch": "Talawade Branch",
+  "statement_period_from": "2024-03-20",
+  "statement_period_to": "2024-04-19",
+  "opening_balance": null,
+  "closing_balance": 50.29,
+  "currency": "INR"
+}

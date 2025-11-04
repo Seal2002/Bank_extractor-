@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "ABDUL LATHEEF UK",
+  "account_number": "672202010008008",
+  "bank_name": "Union Bank",
+  "branch": "CHERUVATHUR",
+  "statement_period_from": "2021-09-01",
+  "statement_period_to": "2022-02-28",
+  "opening_balance": null,
+  "closing_balance": 4492.22,
+  "currency": "INR"
+}

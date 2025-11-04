@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "PARADISE ENTERPRISES",
+  "account_number": "31950200000006",
+  "bank_name": "Bank of Baroda",
+  "branch": "VIKASPURI, NEW DELHI",
+  "statement_period_from": "2022-03-01",
+  "statement_period_to": "2022-03-08",
+  "opening_balance": 8840.92,
+  "closing_balance": 408088.32,
+  "currency": "INR"
+}

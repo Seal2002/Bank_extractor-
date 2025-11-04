@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "ASHWINI",
+  "account_number": "00000040177046693",
+  "bank_name": "SBI",
+  "branch": "NEW DELHI MAIN BRANCH",
+  "statement_period_from": "2024-04-01",
+  "statement_period_to": "2024-06-30",
+  "opening_balance": 11610.51,
+  "closing_balance": 11611.47,
+  "currency": "INR"
+}

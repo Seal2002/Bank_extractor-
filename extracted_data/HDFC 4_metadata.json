@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "MEET AUTOMATION",
+  "account_number": "24992000000111",
+  "bank_name": "HDFC BANK",
+  "branch": "MORVI-2",
+  "statement_period_from": "2018-10-01",
+  "statement_period_to": "2018-10-31",
+  "opening_balance": 29977.83,
+  "closing_balance": 11967.13,
+  "currency": "INR"
+}

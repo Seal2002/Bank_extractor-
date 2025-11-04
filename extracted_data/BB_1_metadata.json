@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "Pushpak Kumar Khandai",
+  "account_number": "52190058386103",
+  "bank_name": "Bandhan Bank",
+  "branch": null,
+  "statement_period_from": "2020-04-01",
+  "statement_period_to": "2020-06-30",
+  "opening_balance": null,
+  "closing_balance": null,
+  "currency": "INR"
+}

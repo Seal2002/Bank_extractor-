@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "DEVENDRA KAUL",
+  "account_number": "004101574259",
+  "bank_name": "ICICI Bank",
+  "branch": "MALAV PARISAR",
+  "statement_period_from": "2016-12-01",
+  "statement_period_to": "2016-12-31",
+  "opening_balance": 137.27,
+  "closing_balance": 48.27,
+  "currency": "INR"
+}

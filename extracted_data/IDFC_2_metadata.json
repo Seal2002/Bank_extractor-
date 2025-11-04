@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "MAMPI DAS",
+  "account_number": "10081373086",
+  "bank_name": "IDFC FIRST Bank",
+  "branch": null,
+  "statement_period_from": "2022-01-01",
+  "statement_period_to": "2022-01-16",
+  "opening_balance": 0.0,
+  "closing_balance": 1.0,
+  "currency": "INR"
+}

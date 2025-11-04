@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "PANKAJ",
+  "account_number": "3788841752",
+  "bank_name": "Central Bank of India",
+  "branch": "LONGOWAL",
+  "statement_period_from": "2022-03-17",
+  "statement_period_to": "2022-03-17",
+  "opening_balance": null,
+  "closing_balance": 457.73,
+  "currency": "INR"
+}

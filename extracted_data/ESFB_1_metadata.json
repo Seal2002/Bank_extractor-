@@ -1,0 +1,11 @@
+{
+  "account_holder_name": "RAJINDRA",
+  "account_number": "100037877754",
+  "bank_name": "Equitas Small Finance Bank",
+  "branch": "GURGAON-SEC15",
+  "statement_period_from": "2021-11-01",
+  "statement_period_to": "2022-05-25",
+  "opening_balance": null,
+  "closing_balance": 442.46,
+  "currency": "INR"
+}
