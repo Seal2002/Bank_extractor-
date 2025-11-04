@@ -26,7 +26,7 @@ if not GOOGLE_API_KEY:
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 # ===============================================
 
-sys.path.insert(0, "/mnt/project")
+#sys.path.insert(0, "/mnt/project")
 from core.bank_statement_extractor import BankStatementExtractor
 from core.transaction_matcher import TransactionMatcher
 
