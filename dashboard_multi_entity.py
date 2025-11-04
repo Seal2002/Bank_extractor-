@@ -203,7 +203,7 @@ def display_entity_summary(entity_data, entity_name, col):
         metadata = entity_data.get('metadata', {})
         
         # Account info in clean format
-        st.markdown("**📋 Account Details**")
+        st.markdown("**Account Details**")
         account_holder = metadata.get('account_holder_name', 'N/A')
         account_number = metadata.get('account_number', 'N/A')
         bank_name = metadata.get('bank_name', 'N/A')
@@ -212,12 +212,12 @@ def display_entity_summary(entity_data, entity_name, col):
         # Display in clean format
         info_col1, info_col2 = st.columns(2)
         with info_col1:
-            st.text(f"👤 {account_holder}")
-            st.text(f"🏦 {bank_name}")
+            st.text(f"Account Holder: {account_holder}")
+            st.text(f"Bank Name: {bank_name}")
         with info_col2:
-            st.text(f"🔢 {account_number}")
+            st.text(f"Account Number: {account_number}")
             if branch != 'N/A':
-                st.text(f"📍 {branch}")
+                st.text(f"Branch: {branch}")
         
         # Statement period and balances
         st.markdown("---")
@@ -251,7 +251,7 @@ def display_entity_summary(entity_data, entity_name, col):
         st.markdown("---")
         
         # Simple key metrics
-        st.markdown("**📊 Transaction Summary**")
+        st.markdown("**Transaction Summary**")
         col1, col2 = st.columns(2)
         
         with col1:
@@ -260,18 +260,18 @@ def display_entity_summary(entity_data, entity_name, col):
         
         with col2:
             # Date range
-            try:
-                date_col = pd.to_datetime(df['date'])
-                min_date = date_col.min()
-                max_date = date_col.max()
+            #try:
+                #date_col = pd.to_datetime(df['date'])
+                #min_date = date_col.min()
+                #max_date = date_col.max()
                 
-                if pd.notna(min_date) and pd.notna(max_date):
-                    days = (max_date - min_date).days
-                    st.metric("Period (days)", days)
-                else:
-                    st.metric("Period (days)", "N/A")
-            except:
-                st.metric("Period (days)", "N/A")
+                #if pd.notna(min_date) and pd.notna(max_date):
+                    #days = (max_date - min_date).days
+                    #st.metric("Period (days)", days)
+               # else:
+                    #st.metric("Period (days)", "N/A")
+            #except:
+                #st.metric("Period (days)", "N/A")
             
             st.metric("Total Debits", f"₹{df['debit'].sum():,.0f}")
         
