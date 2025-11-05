@@ -403,11 +403,7 @@ def display_entity_summary(entity_data, entity_name, col):
         df = entity_data['transactions']
         metadata = entity_data.get('metadata', {})
         
-<<<<<<< HEAD
-        # Account info in clean format
-=======
         # Account info
->>>>>>> 0c964c0 (Final Demo Cut)
         st.markdown("**Account Details**")
         account_holder = metadata.get('account_holder_name', 'N/A')
         account_number = metadata.get('account_number', 'N/A')
@@ -454,11 +450,7 @@ def display_entity_summary(entity_data, entity_name, col):
         
         st.markdown("---")
         
-<<<<<<< HEAD
-        # Simple key metrics
-=======
         # Transaction summary
->>>>>>> 0c964c0 (Final Demo Cut)
         st.markdown("**Transaction Summary**")
         col1, col2 = st.columns(2)
         
@@ -467,22 +459,18 @@ def display_entity_summary(entity_data, entity_name, col):
             st.metric("Total Credits", f"₹{df['credit'].sum():,.0f}")  # FIXED: Proper rupee symbol
         
         with col2:
-            #try:
-                #date_col = pd.to_datetime(df['date'])
-                #min_date = date_col.min()
-                #max_date = date_col.max()
+            try:
+                date_col = pd.to_datetime(df['date'])
+                min_date = date_col.min()
+                max_date = date_col.max()
                 
-                #if pd.notna(min_date) and pd.notna(max_date):
-                    #days = (max_date - min_date).days
-                    #st.metric("Period (days)", days)
-<<<<<<< HEAD
-               # else:
-=======
-                #else:
->>>>>>> 3faee81 (Emoji Removed From Dashboard)
-                    #st.metric("Period (days)", "N/A")
-            #except:
-                #st.metric("Period (days)", "N/A")
+                if pd.notna(min_date) and pd.notna(max_date):
+                    days = (max_date - min_date).days
+                    st.metric("Period (days)", days)
+                else:
+                    st.metric("Period (days)", "N/A")
+            except:
+                st.metric("Period (days)", "N/A")
             
             st.metric("Total Debits", f"₹{df['debit'].sum():,.0f}")  # FIXED: Proper rupee symbol
         
