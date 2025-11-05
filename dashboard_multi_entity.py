@@ -459,19 +459,6 @@ def display_entity_summary(entity_data, entity_name, col):
             st.metric("Total Credits", f"₹{df['credit'].sum():,.0f}")  # FIXED: Proper rupee symbol
         
         with col2:
-            try:
-                date_col = pd.to_datetime(df['date'])
-                min_date = date_col.min()
-                max_date = date_col.max()
-                
-                if pd.notna(min_date) and pd.notna(max_date):
-                    days = (max_date - min_date).days
-                    st.metric("Period (days)", days)
-                else:
-                    st.metric("Period (days)", "N/A")
-            except:
-                st.metric("Period (days)", "N/A")
-            
             st.metric("Total Debits", f"₹{df['debit'].sum():,.0f}")  # FIXED: Proper rupee symbol
         
         st.markdown("---")
@@ -812,7 +799,7 @@ def main():
                                 min_chunk_count=3
                             )
                             patterns = detector.analyze_patterns(
-                                matches, entity1_df, entity2_df,
+                                entity1_df, entity2_df,
                                 entity1_name, entity2_name
                             )
                             st.session_state.patterns = patterns
@@ -920,48 +907,6 @@ def main():
                     )
                     st.markdown("---")
                 
-                # Transaction Details Section
-                st.markdown("### Transaction Details")
-                
-                col1, col2 = st.columns(2)
-                with col1:
-                    show_high_value = st.checkbox("Show only high-value (>₹10K)", value=False)  # FIXED
-                with col2:
-                    sort_option = st.selectbox(
-                        "Sort by",
-                        ["Date (Newest First)", "Date (Oldest First)", "Amount (Highest First)", "Amount (Lowest First)"]
-                    )
-                
-                # Apply filters
-                filtered_df = matches_df.copy()
-                if show_high_value:
-                    filtered_df = filtered_df[filtered_df['is_high_value'] == True]
-                
-                # Apply sorting
-                if sort_option == "Date (Newest First)":
-                    filtered_df = filtered_df.sort_values('transaction_date', ascending=False)
-                elif sort_option == "Date (Oldest First)":
-                    filtered_df = filtered_df.sort_values('transaction_date', ascending=True)
-                elif sort_option == "Amount (Highest First)":
-                    filtered_df = filtered_df.sort_values('amount', ascending=False)
-                else:
-                    filtered_df = filtered_df.sort_values('amount', ascending=True)
-                
-                # Display table
-                display_cols = ['transaction_date', 'amount', f'{entity1_name}_action', f'{entity1_name}_description', f'{entity2_name}_description']
-                st.dataframe(
-                    filtered_df[display_cols],
-                    width="stretch",
-                    column_config={
-                        "transaction_date": st.column_config.DateColumn("Date", format="DD/MM/YYYY"),
-                        "amount": st.column_config.NumberColumn("Amount", format="₹%.0f"),  # FIXED
-                        f"{entity1_name}_action": st.column_config.TextColumn(f"{entity1_name} Action"),
-                        f"{entity1_name}_description": st.column_config.TextColumn(f"{entity1_name} Description"),
-                        f"{entity2_name}_description": st.column_config.TextColumn(f"{entity2_name} Description")
-                    }
-                )
-                
-                st.markdown("---")
                 
                 # Visualizations - IMPROVED
                 st.markdown("## Visual Analysis")
