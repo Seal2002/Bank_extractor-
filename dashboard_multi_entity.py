@@ -538,42 +538,33 @@ def create_money_flow_chart(matches_df, entity1_name, entity2_name):
     received_by_e1 = matches_df[matches_df[f'{entity1_name}_action'] == 'received']['amount'].sum()
     
     fig = go.Figure()
-    
     fig.add_trace(go.Bar(
         x=[f'{entity1_name} → {entity2_name}', f'{entity2_name} → {entity1_name}'],
         y=[sent_by_e1, received_by_e1],
-        text=[f'₹{sent_by_e1:,.0f}', f'₹{received_by_e1:,.0f}'],  # FIXED: Both bars show amounts now
-        textposition='outside',  # IMPROVED: Show text outside bars for better visibility
-        textfont=dict(size=14, color='#1e293b', weight='bold'),  # IMPROVED: Better text styling
+        text=[f'₹{sent_by_e1:,.0f}', f'₹{received_by_e1:,.0f}'],
+        textposition='outside',
+        textfont=dict(size=14, color='#1e293b', weight='bold'),
         marker=dict(
             color=['#1e40af', '#059669'],
             line=dict(color='white', width=2)
         ),
-        hovertemplate='<b>%{x}</b><br>Amount: ₹%{y:,.2f}<extra></extra>'  # FIXED
+        hovertemplate='<b>%{x}</b><br>Amount: ₹%{y:,.2f}<extra></extra>'
     ))
     
+    # Add this layout update with proper margins
     fig.update_layout(
-        title=dict(
-            text=f"Money Flow Analysis: Transaction Direction",
-            font=dict(size=18, family="Arial", color="#1e293b", weight='bold')
-        ),
-        xaxis=dict(title="", showgrid=False, tickfont=dict(size=13, color='#1e293b')),
+        title="Money Flow Analysis: Transaction Direction",
+        xaxis_title="Transaction Flow",
+        yaxis_title="Amount (₹)",
+        height=400,
+        margin=dict(t=80, b=60, l=60, r=40),  # Increased top margin from default
         yaxis=dict(
-            title="Amount (₹)", 
-            showgrid=True, 
-            gridcolor='rgba(0,0,0,0.1)', 
-            tickformat=',.0f',
-            titlefont=dict(color='#1e293b'),
-            tickfont=dict(color='#1e293b')
-        ),
-        plot_bgcolor='rgba(255,255,255,0.9)',
-        paper_bgcolor='rgba(255,255,255,0.9)',
-        height=450,  # IMPROVED: Increased height
-        font=dict(size=13, color='#1e293b'),
-        showlegend=False
+            range=[0, max(sent_by_e1, received_by_e1) * 1.15]  # Add 15% padding at top
+        )
     )
     
     return fig
+
 
 def create_timeline_scatter(matches_df):
     """Create scatter plot with improved styling"""
