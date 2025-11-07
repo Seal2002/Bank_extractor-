@@ -272,9 +272,8 @@ def _display_rapid_withdrawal_patterns(rapid_withdrawals: List[Dict]):
                 st.metric("Received", f"₹{pattern['received_amount']:,.0f}")
             with col2:
                 st.metric("Withdrawn", f"₹{pattern['withdrawn_amount']:,.0f}")
+
             with col3:
-                st.metric("% Withdrawn", f"{pattern['withdrawal_percentage']:.1f}%")
-            with col4:
                 st.metric("Time", f"{pattern['hours_elapsed']:.1f}h")
 
             # Timeline
